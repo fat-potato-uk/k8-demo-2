@@ -4,6 +4,9 @@ metadata:
   name: {{ include "mychart.fullname" . }}
   labels:
     {{- include "mychart.labels" . | nindent 4 }}
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/port: '8080'
 spec:
   type: {{ .Values.service.type }}
   ports:
