@@ -297,3 +297,12 @@ Then re-install our chart:
 ```bash
 helm delete myfirsthelmchart ; helm install myfirsthelmchart mychart
 ```
+
+If we then port forward our service and visit the URL exposed (http://localhost:8080/)
+```bash
+kubectl port-forward service/myfirsthelmchart-mychart 8080:80
+```
+
+We should see the metrics have been automatically scraped in Prometheus (via the service discovery mechanics):
+
+![graph](graph.png "graph")
