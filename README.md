@@ -1,18 +1,18 @@
 # k8-demo-2
 
 For this tutorial we are going to be looking primarily around Helm and how it relates to installing software into your
-Kubernets cluster.
+Kubernetes cluster.
 
 #### Helm
 
 So what is Helm? Helm is the first application package manager running atop Kubernetes. 
-It allows describing the application structure through convenient helm-charts and managing it 
+It allows describing the application structure through convenient helm-charts (Yaml based) and managing it 
 with simple commands.
 
 For the CentOS users amongst you, Helm is to Kubernetes as Yum is to CentOS. Ish.
 
 It actually also provides us with a lot of flexibility and templating around our installations of software
-as it provides its own templating language and supporting mechanics that allow us to make significant changes
+as it provides its own templating language and supporting mechanics. This allows us to make significant changes
 to our installation without having to make major alterations to the `deployment` manifests.
 
 #### Installing Helm
