@@ -158,7 +158,7 @@ httpGet:
 
 The thing is, they require us to implement some behaviours in our application to support this. Which ours does not. 
 
-So, lets just remove those offending lines from our deployment and correct the port:
+So, lets just remove those offending lines from our `deployment.yaml` and correct the port:
 
 ```yaml
 ports:
@@ -216,6 +216,9 @@ prometheus-community/prometheus-blackbox-exporter 	4.15.0       	0.19.0     	Pro
 prometheus-community/alertmanager                 	0.12.1       	v0.22.1    	The Alertmanager handles alerts sent by client ...
 prometheus-community/kube-state-metrics           	3.4.0        	2.1.0      	Install kube-state-metrics to generate and expo...
 ```
+
+The first command above highlights a common practise whereby non-dev repositories are labeled `stable`. This could
+easily be any name we choose.
 
 If we then run:
 
@@ -279,7 +282,7 @@ kubectl --namespace default port-forward $POD_NAME 9090
 ![prom](prom.png "prom")
 
 If we want to use this to capture the metrics from our application, we can take advantage of the service discovery
-mechanics available to us in Kubernetes by simply annotating our service:
+mechanics available to us in Kubernetes by simply annotating our `service.yaml`:
 
 ```yaml
 kind: Service
@@ -299,6 +302,8 @@ helm delete myfirsthelmchart ; helm install myfirsthelmchart mychart
 ```
 
 If we then port forward our service and visit the URL exposed (http://localhost:8080/)
+so we can increment the metrics:
+
 ```bash
 kubectl port-forward service/myfirsthelmchart-mychart 8080:80
 ```
