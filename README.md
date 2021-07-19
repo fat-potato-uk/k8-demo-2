@@ -105,7 +105,7 @@ image:
 This is the image we used in the first tutorial. Now, if we run:
 
 ```bash
-helm myfirsthelmchart mychart
+helm install myfirsthelmchart mychart
 ```
 
 We should get some output:
