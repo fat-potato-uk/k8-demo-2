@@ -204,7 +204,7 @@ with fairly minimal effort. Take for example [Prometheus](https://prometheus.io/
 into our cluster we can use a published chart to quickly and easily add it to our cluster:
 
 ```bash
-helm repo add stable https://charts.helm.sh/stable
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
 helm search repo prom
 NAME                                              	CHART VERSION	APP VERSION	DESCRIPTION                                       
